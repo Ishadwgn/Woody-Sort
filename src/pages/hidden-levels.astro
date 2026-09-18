@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameContainer from '../components/GameContainer.astro';
+import '../styles/game.css';
+---
+
+<Layout
+  title="Woody Sort Game Hidden Levels - Secret Mystery Chambers Guide & Play"
+  description="Unlock and play Woody Sort Game hidden levels! Discover secret chambers (Emerald Relic, Amber Sunstone, Redwood Vault), requirements to unlock, and puzzle walkthroughs."
+>
+  <div class="hidden-page-wrapper">
+    <div class="container">
+      <div class="hidden-header text-center">
+        <span class="wood-badge">🗝️ Secret Mystery Mode</span>
+        <h1 class="hidden-title">Woody Sort Game Hidden Levels</h1>
+        <p class="hidden-subtitle">
+          Secret chambers hidden deep within the ancient forest. Play exclusive mystery levels with unique color configurations and bonus reward multipliers!
+        </p>
+      </div>
+
+      <!-- Playable Hidden Level Embed (Level 101) -->
+      <div class="hidden-game-box">
+        <div class="hidden-game-header">
+          <span class="secret-tag">⭐ Featured Secret Chamber: Emerald Relic (#101)</span>
+        </div>
+        <GameContainer initialLevel={101} />
+      </div>
+
+      <!-- List of All Hidden Chambers & Unlocking Criteria -->
+      <section class="chambers-section">
+        <h2 class="chambers-heading">All Secret Chambers in Woody Sort</h2>
+
+        <div class="chambers-grid">
+          <!-- Chamber 101 -->
+          <div class="woody-card chamber-card">
+            <div class="chamber-badge">Chamber #101</div>
+            <div class="chamber-icon">🟢</div>
+            <h3 class="chamber-title">Emerald Relic</h3>
+            <p class="chamber-desc">A lush ancient puzzle requiring precise green and cyan color sorting around tight 2-tube buffers.</p>
+            <div class="chamber-req">Requirement: <strong>10 Campaign Stars ⭐</strong></div>
+          </div>
+
+          <!-- Chamber 102 -->
+          <div class="woody-card chamber-card">
+            <div class="chamber-badge">Chamber #102</div>
+            <div class="chamber-icon">🟠</div>
+            <h3 class="chamber-title">Amber Sunstone</h3>
+            <p class="chamber-desc">Warm amber and chocolate brown gradient layers with deceptive bottom stack traps.</p>
+            <div class="chamber-req">Requirement: <strong>25 Campaign Stars ⭐</strong></div>
+          </div>
+
+          <!-- Chamber 103 -->
+          <div class="woody-card chamber-card">
+            <div class="chamber-badge">Chamber #103</div>
+            <div class="chamber-icon">🟣</div>
+            <h3 class="chamber-title">Deep Amethyst Crypt</h3>
+            <p class="chamber-desc">Mystical purple and sapphire gems requiring multi-step cascading color swaps.</p>
+            <div class="chamber-req">Requirement: <strong>45 Campaign Stars ⭐</strong></div>
+          </div>
+
+          <!-- Chamber 104 -->
+          <div class="woody-card chamber-card">
+            <div class="chamber-badge">Chamber #104</div>
+            <div class="chamber-icon">🌲</div>
+            <h3 class="chamber-title">Redwood Vault</h3>
+            <p class="chamber-desc">Contains a decoy pre-filled completed red tube that cannot be used as a transfer buffer.</p>
+            <div class="chamber-req">Requirement: <strong>65 Campaign Stars ⭐</strong></div>
+          </div>
+
+          <!-- Chamber 105 -->
+          <div class="woody-card chamber-card">
+            <div class="chamber-badge">Chamber #105</div>
+            <div class="chamber-icon">👑</div>
+            <h3 class="chamber-title">Celestial Zenith</h3>
+            <p class="chamber-desc">The ultimate 8-tube master chamber. Only 2% of players solve this on their first attempt.</p>
+            <div class="chamber-req">Requirement: <strong>90 Campaign Stars ⭐</strong></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .hidden-page-wrapper {
+    padding: 36px 0 60px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .hidden-header {
+    margin-bottom: 28px;
+  }
+
+  .hidden-title {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin: 12px 0 8px;
+  }
+
+  .hidden-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .hidden-game-box {
+    margin-bottom: 48px;
+  }
+
+  .hidden-game-header {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .secret-tag {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: var(--wood-gold);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+  }
+
+  .chambers-section {
+    margin-top: 40px;
+  }
+
+  .chambers-heading {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .chambers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .chamber-card {
+    position: relative;
+    padding-top: 36px;
+    border-color: rgba(245, 158, 11, 0.3);
+    transition: transform 0.2s ease;
+  }
+
+  .chamber-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--wood-gold);
+  }
+
+  .chamber-badge {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--wood-gold);
+  }
+
+  .chamber-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+
+  .chamber-title {
+    font-size: 1.25rem;
+    color: var(--wood-gold-light);
+    margin-bottom: 8px;
+  }
+
+  .chamber-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .chamber-req {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(245, 158, 11, 0.15);
+    padding-top: 10px;
+  }
+
+  .chamber-req strong {
+    color: var(--wood-gold);
+  }
+</style>

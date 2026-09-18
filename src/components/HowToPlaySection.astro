@@ -1,0 +1,207 @@
+---
+---
+
+<section class="section-how-to-play" id="how-to-play">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="wood-badge">📜 Game Master Guide</span>
+      <h2 class="section-title">How to Play Woody Sort Game</h2>
+      <p class="section-desc">
+        Learn the core rules and advanced strategic techniques to conquer even the most intricate Color Sort Puzzle layouts.
+      </p>
+    </div>
+
+    <!-- 3 Core Rules Cards -->
+    <div class="rules-grid">
+      <!-- Rule 1 -->
+      <div class="woody-card rule-card">
+        <div class="rule-badge">Rule 01</div>
+        <div class="rule-icon">🎨</div>
+        <h3 class="rule-title">Matching Top Ball Color</h3>
+        <p class="rule-text">
+          You can only move a ball into another wooden tube if that tube is either <strong>completely empty</strong> or its top ball is the <strong>exact same color</strong> as the ball you are moving.
+        </p>
+      </div>
+
+      <!-- Rule 2 -->
+      <div class="woody-card rule-card">
+        <div class="rule-badge">Rule 02</div>
+        <div class="rule-icon">🧪</div>
+        <h3 class="rule-title">Tube Capacity of 4</h3>
+        <p class="rule-text">
+          Each wooden tube holds a maximum of <strong>4 balls</strong>. You cannot pour a ball into a tube that is already at full capacity. Plan space wisely!
+        </p>
+      </div>
+
+      <!-- Rule 3 -->
+      <div class="woody-card rule-card">
+        <div class="rule-badge">Rule 03</div>
+        <div class="rule-icon">🏆</div>
+        <h3 class="rule-title">Complete 4-of-a-Kind Tubes</h3>
+        <p class="rule-text">
+          The level is won when every color is gathered into its own dedicated tube of 4 matching balls, leaving the helper tubes cleanly empty.
+        </p>
+      </div>
+    </div>
+
+    <!-- Advanced Strategy Tips Box -->
+    <div class="strategy-banner woody-card">
+      <div class="strategy-header">
+        <span class="strategy-icon">💡</span>
+        <div>
+          <h3 class="strategy-title">Master Strategy: 4 Pro Tips for Winning</h3>
+          <p class="strategy-subtitle">Techniques used by top color sort puzzle champions</p>
+        </div>
+      </div>
+
+      <div class="strategy-points-grid">
+        <div class="strat-point">
+          <strong>1. Protect Your Empty Tubes:</strong> An empty tube is your most precious resource. Don't fill it with random colors unless you have a clear combo move to empty another tube.
+        </div>
+        <div class="strat-point">
+          <strong>2. Uncover Buried Colors:</strong> Focus your moves on liberating colors trapped beneath mismatched balls, rather than randomly shuffling matching pairs.
+        </div>
+        <div class="strat-point">
+          <strong>3. Leverage Cascading Pours:</strong> In Woody Sort, moving multiple identical balls in a single cascade saves time and clears bottleneck stacks faster.
+        </div>
+        <div class="strat-point">
+          <strong>4. Use the +1 Tube Booster:</strong> If a layout seems deadlocked, trigger the auxiliary wooden tube booster to provide crucial extra breathing room!
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-how-to-play {
+    padding: 60px 0;
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin: 12px 0 8px;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .rule-card {
+    position: relative;
+    padding-top: 36px;
+    transition: transform 0.2s ease;
+  }
+
+  .rule-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--wood-gold);
+  }
+
+  .rule-badge {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--wood-gold);
+    letter-spacing: 0.05em;
+  }
+
+  .rule-icon {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+  }
+
+  .rule-title {
+    font-size: 1.25rem;
+    color: var(--wood-gold-light);
+    margin-bottom: 10px;
+  }
+
+  .rule-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .rule-text strong {
+    color: var(--text-primary);
+  }
+
+  /* Strategy Banner */
+  .strategy-banner {
+    border: 2px solid rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, rgba(61, 35, 20, 0.95) 0%, rgba(32, 19, 9, 0.95) 100%);
+  }
+
+  .strategy-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+    padding-bottom: 16px;
+  }
+
+  .strategy-icon {
+    font-size: 2.2rem;
+  }
+
+  .strategy-title {
+    font-size: 1.35rem;
+    color: var(--wood-gold);
+  }
+
+  .strategy-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .strategy-points-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .strat-point {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    background: rgba(26, 18, 11, 0.6);
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+  }
+
+  .strat-point strong {
+    color: var(--wood-gold-light);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 860px) {
+    .rules-grid {
+      grid-template-columns: 1fr;
+    }
+    .strategy-points-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

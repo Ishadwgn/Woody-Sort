@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameContainer from '../components/GameContainer.astro';
+import '../styles/game.css';
+---
+
+<Layout
+  title="Woody Sort Game - Play Woody Sort: Color Sort Puzzle Free Online"
+  description="Play Woody Sort Game free online! Authentic rustic wooden tube color sort puzzle. Sort balls, solve 100+ levels, use AI hint solver, and unlock hidden chambers."
+>
+  <!-- HERO SECTION WITH PLAYABLE GAME EMBED -->
+  <section class="hero-game-section">
+    <div class="container">
+      <!-- Title & Headline -->
+      <div class="hero-header text-center">
+        <div class="hero-badge-wrap">
+          <span class="wood-badge">🪵 #1 Woody Ball Sort Puzzle</span>
+          <span class="wood-badge">✨ Free Web Edition</span>
+        </div>
+        <h1 class="hero-title">
+          Woody Sort Game <span class="highlight-wood">Color Sort Puzzle</span>
+        </h1>
+        <p class="hero-subtitle">
+          Experience the ultimate relaxing brain teaser. Tap wooden tubes, sort vibrant colored spheres, and master tranquil puzzle levels.
+        </p>
+      </div>
+
+      <!-- Playable Woody Sort Game Frame -->
+      <div class="hero-game-wrapper">
+        <GameContainer initialLevel={1} />
+      </div>
+
+      <!-- Quick Tips Bar under Game -->
+      <div class="quick-controls-bar woody-card">
+        <div class="quick-tip-item">
+          <span class="kbd-key">Tap Tube</span>
+          <span>Select top ball & move to matching tube</span>
+        </div>
+        <div class="quick-tip-item">
+          <span class="kbd-key">U</span>
+          <span>Undo move</span>
+        </div>
+        <div class="quick-tip-item">
+          <span class="kbd-key">H</span>
+          <span>Smart AI Hint</span>
+        </div>
+        <div class="quick-tip-item">
+          <span class="kbd-key">1-9</span>
+          <span>Quick Tube Selection</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-game-section {
+    padding: 24px 0 40px;
+  }
+
+  .hero-header {
+    margin-bottom: 20px;
+  }
+
+  .hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .highlight-wood {
+    display: block;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97724 50%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .hero-game-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .quick-controls-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .quick-tip-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+
+  .kbd-key {
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: var(--wood-gold);
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.1rem;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+    }
+    .quick-controls-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+</style>

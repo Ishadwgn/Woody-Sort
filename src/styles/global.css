@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Woody & Zen Color Palette */
+  --wood-dark: #2c1a0e;
+  --wood-deep: #3d2314;
+  --wood-bark: #4a2d18;
+  --wood-medium: #784421;
+  --wood-light: #9c5c2d;
+  --wood-amber: #d97724;
+  --wood-gold: #f59e0b;
+  --wood-gold-light: #fef3c7;
+  --wood-cream: #faf5ed;
+  --wood-paper: #f4ece1;
+  
+  /* Forest Zen Accents */
+  --forest-green: #15803d;
+  --forest-emerald: #10b981;
+  --forest-leaf: #22c55e;
+  --forest-soft: #dcfce7;
+  
+  /* UI Slate & Dark Theme */
+  --bg-primary: #1a120b;
+  --bg-secondary: #251a10;
+  --bg-card: rgba(44, 26, 14, 0.85);
+  --bg-card-border: rgba(245, 158, 11, 0.25);
+  --bg-glass: rgba(30, 20, 12, 0.7);
+  --bg-glass-blur: blur(12px);
+  
+  --text-primary: #fdfbf7;
+  --text-secondary: #d1bfa7;
+  --text-muted: #9e8a75;
+  --text-accent: #f59e0b;
+  
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.35);
+  --shadow-tube: inset 0 2px 6px rgba(255,255,255,0.2), 0 8px 24px rgba(0,0,0,0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(120, 68, 33, 0.35) 0%, transparent 70%),
+    radial-gradient(circle at 10% 80%, rgba(21, 128, 61, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 60%, rgba(217, 119, 36, 0.15) 0%, transparent 50%),
+    var(--bg-primary);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-primary);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Glassmorphism Card Style */
+.woody-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--bg-glass-blur);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+}
+
+/* Button variants */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97724 100%);
+  color: #1a120b;
+  border: 1px solid rgba(254, 243, 199, 0.4);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  background: rgba(74, 45, 24, 0.7);
+  color: var(--text-primary);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(120, 68, 33, 0.85);
+  border-color: var(--wood-gold);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(61, 35, 20, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--wood-gold-light);
+  font-size: 1.25rem;
+}
+
+.btn-icon:hover {
+  background: var(--wood-medium);
+  border-color: var(--wood-gold);
+  transform: scale(1.05);
+}
+
+/* Wood Section Badges */
+.wood-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--wood-gold);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.7);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: floatGentle 3.5s infinite ease-in-out;
+}

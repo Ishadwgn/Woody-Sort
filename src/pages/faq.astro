@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import '../styles/game.css';
+---
+
+<Layout
+  title="Woody Sort Game FAQ - Real Money Truth, Rules & Hints"
+  description="Answers to common Woody Sort Game questions. Learn if Woody Sort pays real money (it is 100% free casual entertainment), how to beat levels, and booster tips."
+>
+  <div class="faq-page-wrapper">
+    <div class="container">
+      <div class="faq-page-header text-center">
+        <span class="wood-badge">💡 Knowledge Base</span>
+        <h1 class="faq-page-title">Woody Sort Game FAQ & Guides</h1>
+        <p class="faq-page-subtitle">
+          Find clear answers to frequent player questions regarding gameplay rules, real money inquiries, and solving strategies.
+        </p>
+      </div>
+
+      <!-- Real Money Advisory Alert Box -->
+      <div class="woody-card money-advisory-box" id="real-money">
+        <div class="money-icon">🛡️</div>
+        <div class="money-content">
+          <h2 class="money-title">Important Fact Check: Does Woody Sort Game Pay Real Money?</h2>
+          <p class="money-text">
+            <strong>No, Woody Sort Game does NOT pay real money or provide cash prizes.</strong> Woody Sort is created solely as a casual brain-training puzzle game to help players relax and enjoy spatial reasoning challenges. 
+          </p>
+          <p class="money-text">
+            Be cautious of third-party advertisements or cloned apps falsely claiming you can win hundreds of dollars by sorting colored balls into tubes. Legitimate color sorting games, including our browser edition and Google Play's Woody Sort, are designed strictly for entertainment with no gambling or monetary withdrawals.
+          </p>
+        </div>
+      </div>
+
+      <FAQSection />
+
+      <!-- Quick Play CTA -->
+      <div class="faq-cta text-center">
+        <h2>Ready for a Relaxing Brain Challenge?</h2>
+        <p>Jump into Level 1 and experience the calming wooden clacks of Woody Sort Game.</p>
+        <a href="/" class="btn btn-primary btn-lg">
+          <span>Start Playing Free ➔</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .faq-page-wrapper {
+    padding: 36px 0 60px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .faq-page-header {
+    margin-bottom: 32px;
+  }
+
+  .faq-page-title {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin: 12px 0 8px;
+  }
+
+  .faq-page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .money-advisory-box {
+    display: flex;
+    gap: 24px;
+    background: linear-gradient(135deg, rgba(74, 45, 24, 0.9) 0%, rgba(32, 19, 9, 0.9) 100%);
+    border: 2px solid var(--wood-gold);
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+
+  .money-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+
+  .money-title {
+    font-size: 1.5rem;
+    color: var(--wood-gold);
+    margin-bottom: 12px;
+  }
+
+  .money-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .money-text strong {
+    color: var(--text-primary);
+  }
+
+  .faq-cta {
+    background: linear-gradient(135deg, rgba(61, 35, 20, 0.9) 0%, rgba(26, 18, 11, 0.9) 100%);
+    border: 2px solid rgba(245, 158, 11, 0.4);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    margin-top: 40px;
+  }
+
+  .faq-cta h2 {
+    font-size: 2rem;
+    color: var(--wood-gold);
+    margin-bottom: 8px;
+  }
+
+  .faq-cta p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 680px) {
+    .money-advisory-box {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

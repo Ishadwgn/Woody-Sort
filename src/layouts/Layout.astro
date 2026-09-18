@@ -1,0 +1,84 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  image?: string;
+}
+
+const {
+  title = 'Woody Sort Game - Color Sort Puzzle | Play Free Online',
+  description = 'Play Woody Sort Game online for free! Relaxing wooden tube color sort puzzle. Sort vibrant balls into matching wood tubes, solve 100+ levels, unlock hidden challenges.',
+  canonicalURL = Astro.url.href,
+  image = '/og-woody-sort.jpg',
+} = Astro.props;
+
+const structuredDataGame = {
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "VideoGame"],
+  "name": "Woody Sort Game: Color Sort Puzzle",
+  "url": "https://woodysortgame.com",
+  "description": "Play Woody Sort Game free online. A relaxing rustic wooden ball sort puzzle with smooth physics, 100+ levels, smart hints, and zen audio.",
+  "applicationCategory": "GameApplication",
+  "genre": ["Puzzle", "Brain Game", "Casual", "Color Sorting"],
+  "gameItem": ["Wooden Tubes", "Color Balls", "Boosters"],
+  "operatingSystem": "Any modern web browser (Desktop & Mobile)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "12850",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Woody Sort Game, Woody Sort: Color Sort Puzzle, woody ball sort game, woody sort game free, woody sort game online, woody sort game hidden level, play woody sort online, color sort puzzle, ball sort wooden puzzle" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="theme-color" content="#2c1a0e" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredDataGame)} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,521 @@
+/* Woody Sort Game Board & Physics Styles */
+
+.game-viewport {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 10px 24px;
+}
+
+/* Wood Board Shelf / Platform */
+.game-board-container {
+  width: 100%;
+  min-height: 480px;
+  background: 
+    linear-gradient(180deg, rgba(44, 26, 14, 0.6) 0%, rgba(26, 15, 8, 0.95) 100%),
+    radial-gradient(ellipse at 50% 10%, rgba(245, 158, 11, 0.12) 0%, transparent 60%);
+  border: 3px solid #784421;
+  border-radius: 28px;
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(254, 243, 199, 0.2),
+    inset 0 -10px 30px rgba(0, 0, 0, 0.8);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 16px 20px;
+  overflow: visible;
+}
+
+/* Wood Stand Plaque Header */
+.game-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(44, 26, 14, 0.9);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.level-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.level-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--wood-gold);
+  letter-spacing: 0.04em;
+}
+
+.level-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.stats-pill-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26, 18, 11, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-pill-gold {
+  color: var(--wood-gold);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Tubes Grid Layout */
+.woody-board-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px 22px;
+  width: 100%;
+  min-height: 340px;
+  padding: 40px 10px 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tube Wrapper */
+.woody-tube-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.woody-tube-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.woody-tube-wrapper.is-selected {
+  transform: translateY(-8px);
+}
+
+/* Lifted Ball Animation & Positioning */
+.lifted-ball {
+  position: absolute;
+  top: -64px;
+  z-index: 10;
+  animation: floatHover 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes floatHover {
+  0%, 100% {
+    transform: translateY(0px) scale(1.08);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.08);
+  }
+}
+
+/* The Wooden Tube Body */
+.woody-tube {
+  width: 68px;
+  height: 220px;
+  border-radius: 12px 12px 34px 34px;
+  background: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 20%, rgba(0, 0, 0, 0.25) 80%, rgba(0, 0, 0, 0.5) 100%),
+    rgba(74, 45, 24, 0.28);
+  backdrop-filter: blur(4px);
+  border: 4px solid #784421;
+  border-top: none;
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.5),
+    inset 0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 -10px 20px rgba(44, 26, 14, 0.8);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px 6px 12px;
+  transition: all 0.2s ease;
+}
+
+/* Carved Wood Rim on Tube Top */
+.wood-rim {
+  position: absolute;
+  top: -6px;
+  left: -8px;
+  right: -8px;
+  height: 14px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #9c5c2d 0%, #4a2d18 100%);
+  border: 2px solid #d97724;
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.4),
+    inset 0 1px 2px rgba(255,255,255,0.4);
+  z-index: 3;
+}
+
+/* Wood Base Foot */
+.wood-base {
+  position: absolute;
+  bottom: -8px;
+  left: 4px;
+  right: 4px;
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #784421 0%, #2c1a0e 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  z-index: 1;
+}
+
+/* Glass Tube Highlight Reflection Line */
+.woody-tube::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 5px;
+  bottom: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 90%);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* Stack of balls inside tube */
+.tube-ball-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tube Number Badge */
+.tube-number-badge {
+  margin-top: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(44, 26, 14, 0.8);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Selection & Hint Glows */
+.woody-tube.selected {
+  border-color: #f59e0b;
+  box-shadow: 
+    0 0 20px rgba(245, 158, 11, 0.6),
+    0 12px 24px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+.hint-source {
+  animation: pulseHintSource 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseHintSource {
+  0% {
+    filter: drop-shadow(0 0 5px #f59e0b);
+  }
+  100% {
+    filter: drop-shadow(0 0 20px #f59e0b) drop-shadow(0 0 35px #d97724);
+  }
+}
+
+.hint-target {
+  animation: pulseHintTarget 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes pulseHintTarget {
+  0% {
+    filter: drop-shadow(0 0 5px #22c55e);
+  }
+  100% {
+    filter: drop-shadow(0 0 20px #22c55e) drop-shadow(0 0 35px #10b981);
+  }
+}
+
+/* Shake Tube Animation */
+.shake-tube {
+  animation: shakeAnim 0.35s ease-in-out;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px) rotate(-2deg); }
+  40%, 80% { transform: translateX(8px) rotate(2deg); }
+}
+
+/* Tube Complete Ribbon */
+.tube-complete-ribbon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle, #f59e0b 0%, #d97724 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.8);
+  z-index: 6;
+  animation: ribbonPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes ribbonPop {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  70% { transform: translate(-50%, -50%) scale(1.3); }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* ========================================================
+   BALL GRAPHICS (3D SPHERES WITH REALISTIC SHADING)
+   ======================================================== */
+
+.woody-ball {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 4px 8px rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.woody-ball::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 14px;
+  height: 8px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+.ball-hidden {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/* Color Palettes */
+.ball-ruby-red {
+  background: radial-gradient(circle at 35% 35%, #ff6b6b 0%, #e11d48 55%, #881337 100%);
+}
+
+.ball-sapphire-blue {
+  background: radial-gradient(circle at 35% 35%, #60a5fa 0%, #2563eb 55%, #1e3a8a 100%);
+}
+
+.ball-emerald-green {
+  background: radial-gradient(circle at 35% 35%, #4ade80 0%, #16a34a 55%, #14532d 100%);
+}
+
+.ball-amber-orange {
+  background: radial-gradient(circle at 35% 35%, #fb923c 0%, #ea580c 55%, #7c2d12 100%);
+}
+
+.ball-amethyst-purple {
+  background: radial-gradient(circle at 35% 35%, #c084fc 0%, #9333ea 55%, #581c87 100%);
+}
+
+.ball-golden-yellow {
+  background: radial-gradient(circle at 35% 35%, #fde047 0%, #eab308 55%, #854d0e 100%);
+}
+
+.ball-sakura-pink {
+  background: radial-gradient(circle at 35% 35%, #f472b6 0%, #db2777 55%, #831843 100%);
+}
+
+.ball-ocean-cyan {
+  background: radial-gradient(circle at 35% 35%, #38bdf8 0%, #0284c7 55%, #0c4a6e 100%);
+}
+
+.ball-forest-lime {
+  background: radial-gradient(circle at 35% 35%, #a3e635 0%, #65a30d 55%, #365314 100%);
+}
+
+.ball-chocolate-brown {
+  background: radial-gradient(circle at 35% 35%, #a8714e 0%, #78350f 55%, #451a03 100%);
+}
+
+/* ========================================================
+   GAME CONTROLS & BOOSTER BAR
+   ======================================================== */
+
+.game-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.booster-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: rgba(44, 26, 14, 0.85);
+  border: 2px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 10px 18px;
+  color: var(--text-primary);
+  min-width: 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.booster-btn:hover:not(:disabled) {
+  background: var(--wood-medium);
+  border-color: var(--wood-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+}
+
+.booster-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.booster-icon {
+  font-size: 1.4rem;
+}
+
+.booster-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.booster-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #f59e0b;
+  color: #1a120b;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  border: 1px solid #fff;
+}
+
+/* Modal overlays */
+.game-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.game-modal-overlay.active {
+  display: flex;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.game-modal {
+  width: 100%;
+  max-width: 460px;
+  background: 
+    linear-gradient(180deg, #3d2314 0%, #201309 100%);
+  border: 3px solid #f59e0b;
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(245, 158, 11, 0.4);
+  position: relative;
+  animation: modalScale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalScale {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .woody-tube {
+    width: 54px;
+    height: 185px;
+    padding: 6px 4px 10px;
+  }
+  .woody-ball {
+    width: 38px;
+    height: 38px;
+  }
+  .lifted-ball {
+    top: -52px;
+  }
+  .woody-board-grid {
+    gap: 12px 14px;
+    min-height: 280px;
+    padding-top: 30px;
+  }
+  .game-top-bar {
+    padding: 8px 12px;
+  }
+  .level-title {
+    font-size: 1.1rem;
+  }
+  .booster-btn {
+    padding: 8px 12px;
+    min-width: 68px;
+  }
+}

@@ -1,0 +1,151 @@
+---
+const faqs = [
+  {
+    q: "What is Woody Sort Game (Color Sort Puzzle)?",
+    a: "Woody Sort Game is a popular, relaxing color-sorting brain puzzle where your goal is to organize mixed colored balls into wooden tubes until each tube contains only balls of a single uniform color. It combines spatial logic, pattern recognition, and zen rustic aesthetics."
+  },
+  {
+    q: "Does Woody Sort Game pay real money?",
+    a: "No, Woody Sort Game is purely a casual brain training puzzle and does NOT pay real money. Any apps or ads claiming to offer real cash payouts for sorting ball puzzles are deceptive. Our online version is 100% free with no gambling, no deposits, and no false payout claims."
+  },
+  {
+    q: "How do I unlock Woody Sort Game hidden levels?",
+    a: "Hidden levels (Secret Mystery Chambers) are unlocked as you accumulate 3-star ratings across the regular campaign stages. Earning 10 stars unlocks Secret Chamber #1, 25 stars unlocks Secret Chamber #2, and so on. You can access unlocked hidden levels anytime from the Levels selector menu."
+  },
+  {
+    q: "Can I play Woody Sort Game online for free without downloading an app?",
+    a: "Yes! You can play Woody Sort Game directly in your browser on PC, Mac, iPhone, iPad, and Android without downloading any heavy APKs or app installations. It is lightweight, mobile-responsive, and loads instantly."
+  },
+  {
+    q: "What should I do if I get stuck on a difficult level?",
+    a: "If you get stuck, you have several booster tools available: (1) Use the 'Undo' button to rewind your previous steps, (2) Click '+1 Tube' to add an auxiliary empty wooden tube for extra breathing room, or (3) Click 'Hint' to let the built-in AI solver show you the optimal next move."
+  },
+  {
+    q: "How does the star rating system work?",
+    a: "Each level has a target 'Par Moves' score. If you solve the puzzle within the par move threshold, you achieve a maximum 3-star rating. Solving slightly over par yields 2 stars, and completing the level with extra moves gives 1 star."
+  }
+];
+
+const structuredDataFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+---
+
+<section class="section-faq" id="faq">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="wood-badge">❓ Helpful Answers</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">
+        Everything you need to know about Woody Sort Game rules, hidden levels, gameplay mechanics, and real money queries.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion List -->
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <details class="woody-card faq-item" open={index === 0}>
+          <summary class="faq-question">
+            <span>{faq.q}</span>
+            <span class="faq-chevron">▾</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(structuredDataFAQ)} />
+</section>
+
+<style>
+  .section-faq {
+    padding: 60px 0;
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin: 12px 0 8px;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .faq-list {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .faq-item {
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+
+  .faq-item[open] {
+    border-color: var(--wood-gold);
+  }
+
+  .faq-question {
+    padding: 20px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--wood-gold-light);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-chevron {
+    font-size: 1.3rem;
+    color: var(--wood-gold);
+    transition: transform 0.25s ease;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(245, 158, 11, 0.15);
+    margin-top: 4px;
+    padding-top: 16px;
+  }
+</style>

@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HowToPlaySection from '../components/HowToPlaySection.astro';
+import '../styles/game.css';
+---
+
+<Layout
+  title="How to Play Woody Sort Game - Color Sort Puzzle Rules & Solution Strategy"
+  description="Comprehensive visual tutorial and strategy guide for Woody Sort Game. Learn step-by-step algorithms, tube space management, and how to solve color sort problems easily."
+>
+  <div class="guide-page-wrapper">
+    <div class="container">
+      <div class="guide-header text-center">
+        <span class="wood-badge">📖 Complete Strategy Guide</span>
+        <h1 class="guide-title">How to Master Woody Sort Game</h1>
+        <p class="guide-subtitle">
+          Master the art of color separation with proven tips, step-by-step sorting rules, and advanced deadlock prevention.
+        </p>
+      </div>
+
+      <HowToPlaySection />
+
+      <!-- Deep Dive Algorithm & Solving Breakdown -->
+      <section class="deep-dive-section">
+        <div class="woody-card deep-card">
+          <h2 class="sub-heading">Step-by-Step Color Sort Solving Algorithm</h2>
+          <div class="steps-flow">
+            <div class="step-box">
+              <div class="step-num">Step 1</div>
+              <h4>Survey the Tubes</h4>
+              <p>Scan all tubes for colors that are nearly completed (e.g. 2 or 3 matching balls already together at the bottom). Prioritize consolidating those colors first.</p>
+            </div>
+            <div class="step-box">
+              <div class="step-num">Step 2</div>
+              <h4>Create Your First Empty Buffer</h4>
+              <p>Focus all early transfers on emptying out a single tube completely. Once you have an empty buffer, your maneuvering flexibility expands dramatically.</p>
+            </div>
+            <div class="step-box">
+              <div class="step-num">Step 3</div>
+              <h4>Unbury Lower Hidden Balls</h4>
+              <p>Whenever you have the choice between two valid moves, choose the move that exposes a new, buried color at the bottom of a source tube.</p>
+            </div>
+            <div class="step-box">
+              <div class="step-num">Step 4</div>
+              <h4>Seal Completed Tubes</h4>
+              <p>When a tube reaches 4 identical balls, it is locked. Treat it as completed and do not disturb it, narrowing down the remaining puzzle size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-box text-center">
+          <h3 class="cta-title">Ready to Test Your Strategy?</h3>
+          <p class="cta-text">Put these rules into practice right now on Level 1.</p>
+          <a href="/" class="btn btn-primary btn-lg">
+            <span>Play Woody Sort Now ➔</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .guide-page-wrapper {
+    padding: 36px 0 60px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .guide-header {
+    margin-bottom: 20px;
+  }
+
+  .guide-title {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin: 12px 0 8px;
+  }
+
+  .guide-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .deep-dive-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .deep-card {
+    padding: 36px;
+    border: 2px solid rgba(245, 158, 11, 0.35);
+  }
+
+  .sub-heading {
+    font-size: 1.8rem;
+    color: var(--wood-gold);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .steps-flow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .step-box {
+    background: rgba(26, 18, 11, 0.7);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    position: relative;
+  }
+
+  .step-num {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--wood-gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .step-box h4 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .step-box p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(61, 35, 20, 0.9) 0%, rgba(26, 18, 11, 0.9) 100%);
+    border: 2px solid rgba(245, 158, 11, 0.4);
+    padding: 36px;
+    border-radius: var(--radius-lg);
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+    color: var(--wood-gold);
+    margin-bottom: 8px;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .steps-flow {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

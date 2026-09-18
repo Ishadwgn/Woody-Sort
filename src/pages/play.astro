@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameContainer from '../components/GameContainer.astro';
+import '../styles/game.css';
+---
+
+<Layout
+  title="Play Woody Sort Game Free Online - Fullscreen Woody Ball Sort Puzzle"
+  description="Play Woody Sort Game online in full screen without ads or downloads. Enjoy 50+ curated levels, infinite puzzles, boosters, and zen ambient audio."
+>
+  <div class="play-page-wrapper">
+    <div class="container">
+      <div class="play-page-header text-center">
+        <span class="wood-badge">🎮 Fullscreen Arcade</span>
+        <h1 class="play-page-title">Play Woody Sort Game Online</h1>
+        <p class="play-page-subtitle">
+          Distraction-free, responsive wooden ball sorting puzzle. Tap tubes to pour and organize colors.
+        </p>
+      </div>
+
+      <div class="play-container-card">
+        <GameContainer initialLevel={1} />
+      </div>
+
+      <div class="play-footer-info woody-card">
+        <div class="info-badge-item">
+          <span>🧠 <strong>Mental Exercise:</strong> Boosts concentration, spatial memory, and deductive logic.</span>
+        </div>
+        <div class="info-badge-item">
+          <span>💾 <strong>Auto-Save:</strong> All completed levels and 3-star records are saved locally in your browser.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .play-page-wrapper {
+    padding: 30px 0 60px;
+    min-height: calc(100vh - 180px);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .play-page-header {
+    margin-bottom: 24px;
+  }
+
+  .play-page-title {
+    font-size: 2.4rem;
+    color: var(--text-primary);
+    margin: 10px 0 6px;
+  }
+
+  .play-page-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+  }
+
+  .play-container-card {
+    margin-bottom: 24px;
+  }
+
+  .play-footer-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 24px;
+  }
+
+  .info-badge-item {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+
+  .info-badge-item strong {
+    color: var(--wood-gold-light);
+  }
+</style>

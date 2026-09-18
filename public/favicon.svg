@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9c5c2d" />
+      <stop offset="100%" stop-color="#4a2d18" />
+    </linearGradient>
+    <radialGradient id="ballRed" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ff6b6b" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </radialGradient>
+    <radialGradient id="ballGold" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#b45309" />
+    </radialGradient>
+    <radialGradient id="ballGreen" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#14532d" />
+    </radialGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#2c1a0e" stroke="#d97724" stroke-width="2" />
+  <!-- Wooden tube rim -->
+  <rect x="18" y="10" width="28" height="6" rx="3" fill="#d97724" stroke="#f59e0b" stroke-width="1.5" />
+  <!-- Glass tube body -->
+  <path d="M 22 16 L 22 46 C 22 52 42 52 42 46 L 42 16 Z" fill="rgba(245, 158, 11, 0.15)" stroke="url(#wood)" stroke-width="3" />
+  <!-- Stacked color balls -->
+  <circle cx="32" cy="46" r="7" fill="url(#ballGreen)" />
+  <circle cx="32" cy="32" r="7" fill="url(#ballGold)" />
+  <circle cx="32" cy="18" r="7" fill="url(#ballRed)" />
+</svg>

@@ -1,0 +1,148 @@
+---
+---
+
+<section class="section-features">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="wood-badge">✨ Authentic Zen Experience</span>
+      <h2 class="section-title">Why Players Love Woody Sort Game</h2>
+      <p class="section-desc">
+        Designed from the ground up for smooth tactile satisfaction, organic wooden aesthetics, and brain-stimulating fun.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="woody-card feature-card">
+        <div class="feat-icon-box">🪵</div>
+        <h3 class="feat-title">Rustic Woodcraft Aesthetics</h3>
+        <p class="feat-desc">
+          Warm natural oak, walnut, and bamboo textures paired with soothing synthesized acoustic wooden clacks and forest breeze sounds.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="woody-card feature-card">
+        <div class="feat-icon-box">💡</div>
+        <h3 class="feat-title">Smart AI Solver & Hints</h3>
+        <p class="feat-desc">
+          Stuck on a tricky configuration? Our built-in BFS puzzle solver calculates the exact optimal next move without spoiling the entire puzzle.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="woody-card feature-card">
+        <div class="feat-icon-box">🗝️</div>
+        <h3 class="feat-title">Secret Hidden Chambers</h3>
+        <p class="feat-desc">
+          Earn 3-star ratings across campaign levels to unlock mystery hidden levels with intricate trap stacks and bonus coin payouts.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="woody-card feature-card">
+        <div class="feat-icon-box">⚡</div>
+        <h3 class="feat-title">Infinite Solvable Levels</h3>
+        <p class="feat-desc">
+          Enjoy 50+ curated campaign stages followed by an infinite procedural solvable level generator that ensures non-stop replayability.
+        </p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="woody-card feature-card">
+        <div class="feat-icon-box">📱</div>
+        <h3 class="feat-title">Instant Play on Any Device</h3>
+        <p class="feat-desc">
+          Zero downloads, zero loading screens, zero storage bloat. Play seamlessly on mobile phones, tablets, and desktop browsers.
+        </p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="woody-card feature-card">
+        <div class="feat-icon-box">🛡️</div>
+        <h3 class="feat-title">100% Free & Family Friendly</h3>
+        <p class="feat-desc">
+          Pure casual puzzle entertainment. No real money gambling or paywalls. Perfect for kids, adults, and seniors alike.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-features {
+    padding: 60px 0;
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin: 12px 0 8px;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--wood-gold);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.2);
+  }
+
+  .feat-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+
+  .feat-title {
+    font-size: 1.2rem;
+    color: var(--wood-gold-light);
+    margin-bottom: 10px;
+  }
+
+  .feat-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

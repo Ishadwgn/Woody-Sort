@@ -1,0 +1,16 @@
+{
+  "name": "Woody Sort Game - Color Sort Puzzle",
+  "short_name": "Woody Sort",
+  "description": "Play Woody Sort Game - A relaxing woody color ball sort puzzle game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a120b",
+  "theme_color": "#2c1a0e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
