@@ -218,3 +218,23 @@ button {
 .animate-float {
   animation: floatGentle 3.5s infinite ease-in-out;
 }
+
+/* Suppress / Hide any Netlify injected badges, feedback widgets or drawers */
+#netlify-drawer,
+iframe#netlify-drawer,
+.netlify-badge,
+[data-netlify-deploy-id] .netlify-badge,
+a[href*="netlify.com"][target="_blank"],
+div[id^="netlify-feedback"],
+div[class*="netlify-drawer"],
+div[class*="netlify-feedback"],
+div[class*="netlify-badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  position: absolute !important;
+  clip: rect(0 0 0 0) !important;
+}
