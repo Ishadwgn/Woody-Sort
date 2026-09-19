@@ -1,30 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9c5c2d" />
-      <stop offset="100%" stop-color="#4a2d18" />
+    <!-- Background Circle Radial Gradient -->
+    <radialGradient id="bgGrad" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#3d2212" />
+      <stop offset="60%" stop-color="#24140a" />
+      <stop offset="100%" stop-color="#140b05" />
+    </radialGradient>
+
+    <!-- Wood Texture Gradient -->
+    <linearGradient id="woodBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97724" />
+      <stop offset="30%" stop-color="#f59e0b" />
+      <stop offset="70%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
     </linearGradient>
-    <radialGradient id="ballRed" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#ff6b6b" />
-      <stop offset="100%" stop-color="#991b1b" />
+
+    <!-- Wooden Tube Rim Gradient -->
+    <linearGradient id="woodRim" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="40%" stop-color="#d97724" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+
+    <!-- Wooden Stand Base Gradient -->
+    <linearGradient id="woodBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="25%" stop-color="#b45309" />
+      <stop offset="50%" stop-color="#d97724" />
+      <stop offset="75%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#451a03" />
+    </linearGradient>
+
+    <!-- Red Shiny Sphere -->
+    <radialGradient id="ballRed" cx="35%" cy="30%" r="68%">
+      <stop offset="0%" stop-color="#fca5a5" />
+      <stop offset="22%" stop-color="#ef4444" />
+      <stop offset="70%" stop-color="#b91c1c" />
+      <stop offset="100%" stop-color="#450a0a" />
     </radialGradient>
-    <radialGradient id="ballGold" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#fde047" />
-      <stop offset="100%" stop-color="#b45309" />
+
+    <!-- Amber Gold Sphere -->
+    <radialGradient id="ballGold" cx="35%" cy="30%" r="68%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="22%" stop-color="#f59e0b" />
+      <stop offset="70%" stop-color="#d97724" />
+      <stop offset="100%" stop-color="#78350f" />
     </radialGradient>
-    <radialGradient id="ballGreen" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#4ade80" />
-      <stop offset="100%" stop-color="#14532d" />
+
+    <!-- Emerald Green Sphere -->
+    <radialGradient id="ballGreen" cx="35%" cy="30%" r="68%">
+      <stop offset="0%" stop-color="#86efac" />
+      <stop offset="22%" stop-color="#22c55e" />
+      <stop offset="70%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#052e16" />
     </radialGradient>
+
+    <!-- Cyan / Azure Sphere for subtle glow -->
+    <radialGradient id="ballCyan" cx="35%" cy="30%" r="68%">
+      <stop offset="0%" stop-color="#a5f3fc" />
+      <stop offset="22%" stop-color="#06b6d4" />
+      <stop offset="70%" stop-color="#0e7490" />
+      <stop offset="100%" stop-color="#083344" />
+    </radialGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadowBezel" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.65" />
+    </filter>
+    <filter id="ballGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
   </defs>
-  <!-- Background circle -->
-  <circle cx="32" cy="32" r="30" fill="#2c1a0e" stroke="#d97724" stroke-width="2" />
-  <!-- Wooden tube rim -->
-  <rect x="18" y="10" width="28" height="6" rx="3" fill="#d97724" stroke="#f59e0b" stroke-width="1.5" />
-  <!-- Glass tube body -->
-  <path d="M 22 16 L 22 46 C 22 52 42 52 42 46 L 42 16 Z" fill="rgba(245, 158, 11, 0.15)" stroke="url(#wood)" stroke-width="3" />
-  <!-- Stacked color balls -->
-  <circle cx="32" cy="46" r="7" fill="url(#ballGreen)" />
-  <circle cx="32" cy="32" r="7" fill="url(#ballGold)" />
-  <circle cx="32" cy="18" r="7" fill="url(#ballRed)" />
+
+  <!-- Outer Rounded Badge Background -->
+  <rect x="24" y="24" width="464" height="464" rx="100" fill="url(#bgGrad)" stroke="url(#woodBezel)" stroke-width="12" filter="url(#shadowBezel)" />
+
+  <!-- Wood Stand Base Platform -->
+  <path d="M 120 440 L 392 440 C 404 440 412 430 408 418 L 396 388 C 394 382 388 378 382 378 L 130 378 C 124 378 118 382 116 388 L 104 418 C 100 430 108 440 120 440 Z" fill="url(#woodBase)" stroke="#f59e0b" stroke-width="4" />
+  <!-- Base Trim Highlight -->
+  <rect x="140" y="420" width="232" height="6" rx="3" fill="#fde68a" opacity="0.4" />
+
+  <!-- Glass Tube Body -->
+  <path d="M 176 104 L 176 348 C 176 392 336 392 336 348 L 336 104 Z" fill="rgba(245, 158, 11, 0.08)" stroke="#d97724" stroke-width="10" stroke-linejoin="round" />
+  <!-- Glass inner glow & reflection -->
+  <path d="M 190 110 L 190 340 C 190 365 220 374 240 375 L 240 110 Z" fill="rgba(255, 255, 255, 0.07)" />
+  <line x1="322" y1="120" x2="322" y2="330" stroke="rgba(255, 255, 255, 0.25)" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Color Balls Stack (Bottom to Top) -->
+  <!-- 1. Emerald Green Ball -->
+  <circle cx="256" cy="336" r="54" fill="url(#ballGreen)" filter="url(#ballGlow)" />
+  <ellipse cx="242" cy="318" rx="14" ry="8" fill="#ffffff" opacity="0.6" transform="rotate(-25 242 318)" />
+
+  <!-- 2. Amber Gold Ball -->
+  <circle cx="256" cy="226" r="54" fill="url(#ballGold)" filter="url(#ballGlow)" />
+  <ellipse cx="242" cy="208" rx="14" ry="8" fill="#ffffff" opacity="0.65" transform="rotate(-25 242 208)" />
+
+  <!-- 3. Ruby Red Ball (Top) -->
+  <circle cx="256" cy="116" r="54" fill="url(#ballRed)" filter="url(#ballGlow)" />
+  <ellipse cx="242" cy="98" rx="14" ry="8" fill="#ffffff" opacity="0.7" transform="rotate(-25 242 98)" />
+
+  <!-- Wooden Lip / Rim at Tube Top -->
+  <rect x="156" y="74" width="200" height="28" rx="12" fill="url(#woodRim)" stroke="#fcd34d" stroke-width="5" filter="url(#ballGlow)" />
+  <!-- Rim Highlight line -->
+  <rect x="174" y="80" width="164" height="4" rx="2" fill="#fffbeb" opacity="0.6" />
+
+  <!-- Decorative sparkle star -->
+  <path d="M 370 70 Q 380 90 400 100 Q 380 110 370 130 Q 360 110 340 100 Q 360 90 370 70 Z" fill="#fbbf24" opacity="0.85" />
 </svg>

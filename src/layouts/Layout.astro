@@ -8,37 +8,93 @@ export interface Props {
   description?: string;
   canonicalURL?: string;
   image?: string;
+  type?: string;
 }
 
 const {
   title = 'Woody Sort Game - Color Sort Puzzle | Play Free Online',
   description = 'Play Woody Sort Game online for free! Relaxing wooden tube color sort puzzle. Sort vibrant balls into matching wood tubes, solve 100+ levels, unlock hidden challenges.',
-  canonicalURL = Astro.url.href,
+  canonicalURL: propCanonical,
   image = '/og-woody-sort.jpg',
+  type = 'website'
 } = Astro.props;
+
+// Site origin resolution
+const siteOrigin = Astro.site ? Astro.site.origin : 'https://woodysortgame.com';
+
+// Clean canonical URL calculation (strip trailing slashes except root, normalize pathname)
+const cleanPath = Astro.url.pathname.replace(/\/+$/, '') || '';
+const canonical = propCanonical || `${siteOrigin}${cleanPath}`;
+
+// Absolute OG image URL
+const absoluteImageUrl = image.startsWith('http') ? image : `${siteOrigin}${image.startsWith('/') ? image : `/${image}`}`;
+
+// Breadcrumb Schema calculation
+const pathSegments = cleanPath.split('/').filter(Boolean);
+const breadcrumbItems = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": siteOrigin
+  },
+  ...pathSegments.map((segment, index) => {
+    const formattedName = segment
+      .split('-')
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+    const segmentUrl = `${siteOrigin}/${pathSegments.slice(0, index + 1).join('/')}`;
+    return {
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": formattedName,
+      "item": segmentUrl
+    };
+  })
+];
 
 const structuredDataGame = {
   "@context": "https://schema.org",
-  "@type": ["WebApplication", "VideoGame"],
-  "name": "Woody Sort Game: Color Sort Puzzle",
-  "url": "https://woodysortgame.com",
-  "description": "Play Woody Sort Game free online. A relaxing rustic wooden ball sort puzzle with smooth physics, 100+ levels, smart hints, and zen audio.",
-  "applicationCategory": "GameApplication",
-  "genre": ["Puzzle", "Brain Game", "Casual", "Color Sorting"],
-  "gameItem": ["Wooden Tubes", "Color Balls", "Boosters"],
-  "operatingSystem": "Any modern web browser (Desktop & Mobile)",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "12850",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
+  "@graph": [
+    {
+      "@type": ["WebApplication", "VideoGame"],
+      "@id": `${siteOrigin}/#game`,
+      "name": "Woody Sort Game: Color Sort Puzzle",
+      "url": siteOrigin,
+      "description": "Play Woody Sort Game free online. A relaxing rustic wooden ball sort puzzle with smooth physics, 100+ levels, smart hints, and zen audio.",
+      "applicationCategory": "GameApplication",
+      "genre": ["Puzzle", "Brain Game", "Casual", "Color Sorting"],
+      "gameItem": ["Wooden Tubes", "Color Balls", "Boosters"],
+      "operatingSystem": "Any modern web browser (Desktop, Tablet, Mobile)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "12850",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "image": absoluteImageUrl
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteOrigin}/#website`,
+      "url": siteOrigin,
+      "name": "Woody Sort Game",
+      "description": "Official free online Woody Sort Game - Rustic Wood Color Sort Puzzle.",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      "itemListElement": breadcrumbItems
+    }
+  ]
 };
 ---
 
@@ -47,35 +103,65 @@ const structuredDataGame = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Machine & LLM Context Discovery -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Documentation" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="google1d95b362f30f061e" />
     <meta name="google-site-verification" content="1d95b362f30f061e" />
 
+    <!-- Crawlability & Indexing -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content="Woody Sort Game, Woody Sort: Color Sort Puzzle, woody ball sort game, woody sort game free, woody sort game online, woody sort game hidden level, play woody sort online, color sort puzzle, ball sort wooden puzzle" />
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Mobile & PWA Optimization -->
     <meta name="theme-color" content="#2c1a0e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Woody Sort" />
+    <meta name="application-name" content="Woody Sort Game" />
+    <meta name="msapplication-TileColor" content="#2c1a0e" />
+    <meta name="format-detection" content="telephone=no" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Woody Sort Game" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={absoluteImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Woody Sort Game - Color Sort Puzzle" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:url" content={canonical} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <meta property="twitter:image" content={absoluteImageUrl} />
+    <meta property="twitter:image:alt" content="Woody Sort Game - Color Sort Puzzle" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data Graph -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredDataGame)} />
   </head>
   <body>

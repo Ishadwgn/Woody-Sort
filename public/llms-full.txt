@@ -1,0 +1,87 @@
+# Woody Sort Game - Complete Documentation & Reference
+
+This document provides complete contextual and technical reference for Woody Sort Game (Woody Sort: Color Sort Puzzle) hosted at https://woodysortgame.com.
+
+---
+
+## 1. Project Overview & Identity
+- Name: Woody Sort Game (Woody Sort: Color Sort Puzzle)
+- Canonical URL: https://woodysortgame.com
+- Genre: Casual Logic Puzzle, Brain Teaser, Color Sort Game
+- Platform: Cross-platform Web Application (Desktop, Mobile, Tablet)
+- Technology: Astro, TypeScript, Web Audio API, PWA Service Worker Ready
+- License / Cost: Free-to-play web game
+
+---
+
+## 2. Core Gameplay Mechanics
+Woody Sort is a wooden-themed color sorting puzzle game. The screen presents a series of wooden tubes filled with colored balls in randomized configurations.
+
+### 2.1 Basic Rules
+1. A player can move only the topmost ball from any tube.
+2. A ball may only be dropped into a destination tube if:
+   a) The destination tube has at least one empty space (maximum capacity is 4 balls per tube).
+   b) The destination tube is currently empty OR its current topmost ball shares the exact same color as the ball being dropped.
+3. Once all balls of each color are consolidated into single-color tubes and extra auxiliary tubes are empty, the level is solved.
+
+### 2.2 Game Mechanics & Solvability
+- Every level is mathematically verified to be solvable from its initial state without requiring boosters.
+- AI Solver Engine: Built-in BFS (Breadth-First Search) solver analyzes all valid permutations in real time to provide guaranteed non-cyclic hint steps.
+- Tube Height: Standard 4 units high.
+- Color Palette: Emerald Green, Ruby Red, Amber Yellow, Royal Blue, Amethyst Purple, Orange Ember, Cyan Aqua, Sakura Pink, Lime Mint, and Walnut Bronze.
+
+---
+
+## 3. Game Modes & Progression
+
+### 3.1 Standard Campaign (Levels 1 - 100+)
+Progressive difficulty curve starting with 3 tubes and 2 colors (tutorial levels) up to 12 tubes, 10 colors, and tight auxiliary buffer constraints.
+
+### 3.2 Secret Mystery Chambers (Hidden Levels)
+Special thematic levels unlocked through milestone completions or star collections:
+- **Emerald Relic (Level 101)**: Ancient jade forest configuration requiring dual-buffer color isolation.
+- **Amber Sunstone (Level 102)**: High-density solar color sorting with narrow transfer channels.
+- **Redwood Vault (Level 103)**: Maximum tube capacity challenges designed for puzzle grandmasters.
+
+### 3.3 Scoring & Star System
+- 3 Stars: Solved with optimal move efficiency and zero undos.
+- 2 Stars: Solved within reasonable move threshold.
+- 1 Star: Solved using hints or additional undos.
+
+---
+
+## 4. Keyboard Shortcuts & Accessibility
+- Tube Selection: Numeric keys `1` to `9` map to tubes 1 through 9.
+- Undo Move: `U` or `Ctrl + Z`
+- AI Hint: `H`
+- Restart Level: `R`
+- Ambient Audio Toggle: `M` (Mute/Unmute)
+- Fullscreen Toggle: `F`
+
+---
+
+## 5. Frequently Asked Questions & Fact Check
+
+### Q1: Does Woody Sort Game pay real money or cash rewards?
+**Answer**: No. Woody Sort Game is strictly a casual, free-to-play brain puzzle designed for cognitive relaxation and fun. There are NO cash payouts, cryptocurrency rewards, gambling mechanics, or PayPal withdrawals. Any online advertisement promoting real money earnings from Woody Sort is false and misleading.
+
+### Q2: How can I solve difficult levels without getting stuck?
+**Answer**:
+1. Keep at least one empty auxiliary tube completely clear until you can complete an entire single-color tube.
+2. Group matching color segments together as early as possible.
+3. Avoid scattering partial color pairs across multiple tubes.
+4. Utilize the built-in AI hint solver (`H` key) to observe optimal multi-step transfers.
+
+### Q3: Is Woody Sort playable offline?
+**Answer**: Yes. Once loaded, the game bundle and audio assets are cached locally via modern browser storage and Progressive Web App (PWA) protocols.
+
+---
+
+## 6. Site Structure & Sitemaps
+- Homepage & Game: `https://woodysortgame.com/`
+- Fullscreen Play Mode: `https://woodysortgame.com/play`
+- How to Play & Strategy: `https://woodysortgame.com/how-to-play`
+- Hidden Levels Guide: `https://woodysortgame.com/hidden-levels`
+- FAQ & Safety Hub: `https://woodysortgame.com/faq`
+- XML Sitemap: `https://woodysortgame.com/sitemap.xml`
+- Machine Context: `https://woodysortgame.com/llms.txt`

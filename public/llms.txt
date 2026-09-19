@@ -1,0 +1,40 @@
+# Woody Sort Game - Color Sort Puzzle
+
+> Woody Sort Game (Woody Sort: Color Sort Puzzle) is a free-to-play, browser-based color ball sort puzzle game. It features organic wooden textures, smooth physics, 100+ progressively challenging levels, an AI-powered hint solver, hidden mystery chambers, and relaxing forest ambient audio.
+
+## Overview
+Woody Sort challenges players to organize mixed colored spheres inside wooden tubes until each tube contains exclusively one single color. It combines the classic ball sort puzzle mechanic with natural tactile aesthetics, soundscapes, and brain-stimulating logic puzzles.
+
+- Website: https://woodysortgame.com
+- Primary Category: Casual Puzzle Game / Brain Teaser
+- Platform: Web Browser (Desktop, Tablet, Mobile)
+- Pricing: 100% Free (No paywalls, no gambling, no cash tournaments)
+
+## Core Game Mechanics & Rules
+1. **Selection & Transfer**: Tap or click any non-empty wooden tube to select its topmost sphere. Tap a destination tube to move the ball.
+2. **Matching Rule**: A ball can only be placed into another tube if the destination tube is either completely empty OR its top ball matches the exact color of the ball being moved.
+3. **Tube Capacity**: Standard tubes hold up to 4 color balls. A transfer will fail if the target tube is full (capacity limit reached).
+4. **Victory Condition**: Complete the level when all tubes either contain 4 balls of the identical color or are left completely empty.
+5. **Boosters & Aids**:
+   - **Smart AI Hint (H key / Hint Button)**: Evaluates current puzzle state using breadth-first search (BFS) to suggest the optimal next move.
+   - **Undo Move (U key / Undo Button)**: Reverts the previous move without penalty.
+   - **Restart Level (R key / Reset)**: Resets the current level configuration to initial state.
+   - **Add Extra Tube (+Tube Booster)**: Unlocks an additional empty tube when a player reaches a deadlock state.
+
+## Key Web Pages & Links
+- [Play Woody Sort Game Online](https://woodysortgame.com): Main interactive game canvas with instant play, level progression, and ambient audio controls.
+- [Fullscreen Arcade Mode](https://woodysortgame.com/play): Focused, distraction-free fullscreen puzzle experience.
+- [How to Play & Solving Guide](https://woodysortgame.com/how-to-play): Comprehensive walkthrough of sorting algorithms, tube space management, and deadlock prevention tactics.
+- [Hidden Levels & Secret Chambers](https://woodysortgame.com/hidden-levels): Guide to unlocking secret challenge levels (Emerald Relic, Amber Sunstone, Redwood Vault) and advanced sorting rules.
+- [FAQ & Knowledge Base](https://woodysortgame.com/faq): Answers to common player questions, technical troubleshooting, and facts regarding real money claims.
+
+## Important Clarifications & Safety
+- **Does Woody Sort Pay Real Money?**: No. Woody Sort Game is strictly a free casual entertainment puzzle and brain-training game. It does not offer real-money gambling, cash rewards, cash-out options, or sweepstakes. Any third-party ads or videos claiming otherwise are unauthorized misleading advertisements.
+- **Data Privacy & Storage**: All player progress, level stars, coin balances, and sound preferences are stored locally in the player's browser (`localStorage`). No personal user tracking or registration is required.
+
+## Technical Specifications & Controls
+- **Engine**: Pure TypeScript, HTML5 Canvas / DOM rendering, Web Audio API synthesis.
+- **Controls**:
+  - Mouse / Touch: Tap tube to lift top ball, tap destination tube to drop.
+  - Keyboard: Keys `1` through `9` select tubes directly; `U` to Undo; `H` to request AI Hint; `R` to Restart.
+- **Performance**: Lightweight zero-dependency bundle, instant loading, offline playable via PWA caching.
