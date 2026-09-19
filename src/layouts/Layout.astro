@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 // Site origin resolution
-const siteOrigin = Astro.site ? Astro.site.origin : 'https://woodysortgame.com';
+const siteOrigin = Astro.site ? Astro.site.origin : 'https://woody-sort.vercel.app';
 
 // Clean canonical URL calculation (strip trailing slashes except root, normalize pathname)
 const cleanPath = Astro.url.pathname.replace(/\/+$/, '') || '';

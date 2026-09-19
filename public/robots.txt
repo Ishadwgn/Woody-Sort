@@ -1,5 +1,5 @@
 # Robots.txt for Woody Sort Game
-# Website: https://woodysortgame.com
+# Website: https://woody-sort.vercel.app
 
 User-agent: *
 Allow: /
@@ -48,5 +48,5 @@ User-agent: CCBot
 Allow: /
 
 # Sitemaps
-Sitemap: https://woodysortgame.com/sitemap.xml
-Sitemap: https://woodysortgame.com/sitemap-index.xml
+Sitemap: https://woody-sort.vercel.app/sitemap.xml
+Sitemap: https://woody-sort.vercel.app/sitemap-index.xml

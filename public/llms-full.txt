@@ -1,12 +1,12 @@
 # Woody Sort Game - Complete Documentation & Reference
 
-This document provides complete contextual and technical reference for Woody Sort Game (Woody Sort: Color Sort Puzzle) hosted at https://woodysortgame.com.
+> This document provides complete contextual and technical reference for Woody Sort Game (Woody Sort: Color Sort Puzzle) hosted at https://woody-sort.vercel.app.
 
 ---
 
 ## 1. Project Overview & Identity
 - Name: Woody Sort Game (Woody Sort: Color Sort Puzzle)
-- Canonical URL: https://woodysortgame.com
+- Canonical URL: https://woody-sort.vercel.app
 - Genre: Casual Logic Puzzle, Brain Teaser, Color Sort Game
 - Platform: Cross-platform Web Application (Desktop, Mobile, Tablet)
 - Technology: Astro, TypeScript, Web Audio API, PWA Service Worker Ready
@@ -78,10 +78,10 @@ Special thematic levels unlocked through milestone completions or star collectio
 ---
 
 ## 6. Site Structure & Sitemaps
-- Homepage & Game: `https://woodysortgame.com/`
-- Fullscreen Play Mode: `https://woodysortgame.com/play`
-- How to Play & Strategy: `https://woodysortgame.com/how-to-play`
-- Hidden Levels Guide: `https://woodysortgame.com/hidden-levels`
-- FAQ & Safety Hub: `https://woodysortgame.com/faq`
-- XML Sitemap: `https://woodysortgame.com/sitemap.xml`
-- Machine Context: `https://woodysortgame.com/llms.txt`
+- Homepage & Game: `https://woody-sort.vercel.app/`
+- Fullscreen Play Mode: `https://woody-sort.vercel.app/play`
+- How to Play & Strategy: `https://woody-sort.vercel.app/how-to-play`
+- Hidden Levels Guide: `https://woody-sort.vercel.app/hidden-levels`
+- FAQ & Safety Hub: `https://woody-sort.vercel.app/faq`
+- XML Sitemap: `https://woody-sort.vercel.app/sitemap.xml`
+- Machine Context: `https://woody-sort.vercel.app/llms.txt`

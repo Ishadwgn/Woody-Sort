@@ -5,7 +5,7 @@
 ## Overview
 Woody Sort challenges players to organize mixed colored spheres inside wooden tubes until each tube contains exclusively one single color. It combines the classic ball sort puzzle mechanic with natural tactile aesthetics, soundscapes, and brain-stimulating logic puzzles.
 
-- Website: https://woodysortgame.com
+- Website: https://woody-sort.vercel.app
 - Primary Category: Casual Puzzle Game / Brain Teaser
 - Platform: Web Browser (Desktop, Tablet, Mobile)
 - Pricing: 100% Free (No paywalls, no gambling, no cash tournaments)
@@ -22,11 +22,11 @@ Woody Sort challenges players to organize mixed colored spheres inside wooden tu
    - **Add Extra Tube (+Tube Booster)**: Unlocks an additional empty tube when a player reaches a deadlock state.
 
 ## Key Web Pages & Links
-- [Play Woody Sort Game Online](https://woodysortgame.com): Main interactive game canvas with instant play, level progression, and ambient audio controls.
-- [Fullscreen Arcade Mode](https://woodysortgame.com/play): Focused, distraction-free fullscreen puzzle experience.
-- [How to Play & Solving Guide](https://woodysortgame.com/how-to-play): Comprehensive walkthrough of sorting algorithms, tube space management, and deadlock prevention tactics.
-- [Hidden Levels & Secret Chambers](https://woodysortgame.com/hidden-levels): Guide to unlocking secret challenge levels (Emerald Relic, Amber Sunstone, Redwood Vault) and advanced sorting rules.
-- [FAQ & Knowledge Base](https://woodysortgame.com/faq): Answers to common player questions, technical troubleshooting, and facts regarding real money claims.
+- [Play Woody Sort Game Online](https://woody-sort.vercel.app): Main interactive game canvas with instant play, level progression, and ambient audio controls.
+- [Fullscreen Arcade Mode](https://woody-sort.vercel.app/play): Focused, distraction-free fullscreen puzzle experience.
+- [How to Play & Solving Guide](https://woody-sort.vercel.app/how-to-play): Comprehensive walkthrough of sorting algorithms, tube space management, and deadlock prevention tactics.
+- [Hidden Levels & Secret Chambers](https://woody-sort.vercel.app/hidden-levels): Guide to unlocking secret challenge levels (Emerald Relic, Amber Sunstone, Redwood Vault) and advanced sorting rules.
+- [FAQ & Knowledge Base](https://woody-sort.vercel.app/faq): Answers to common player questions, technical troubleshooting, and facts regarding real money claims.
 
 ## Important Clarifications & Safety
 - **Does Woody Sort Pay Real Money?**: No. Woody Sort Game is strictly a free casual entertainment puzzle and brain-training game. It does not offer real-money gambling, cash rewards, cash-out options, or sweepstakes. Any third-party ads or videos claiming otherwise are unauthorized misleading advertisements.

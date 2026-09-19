@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://woodysortgame.com',
+  site: 'https://woody-sort.vercel.app',
   trailingSlash: 'never',
   compressHTML: true,
   integrations: [sitemap()],

@@ -4,31 +4,31 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://woodysortgame.com</loc>
+    <loc>https://woody-sort.vercel.app/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://woodysortgame.com/play</loc>
+    <loc>https://woody-sort.vercel.app/play</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://woodysortgame.com/how-to-play</loc>
+    <loc>https://woody-sort.vercel.app/how-to-play</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://woodysortgame.com/hidden-levels</loc>
+    <loc>https://woody-sort.vercel.app/hidden-levels</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://woodysortgame.com/faq</loc>
+    <loc>https://woody-sort.vercel.app/faq</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
